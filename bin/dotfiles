@@ -1,0 +1,8 @@
+#!/usr/local/env bash
+
+ln -s ~/dotfiles/ctags ~/.ctags
+ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/vim ~/.vim
+ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/gitconfig ~/.gitconfig
+ln -s ~/dotfiles/global_ignore ~/.global_ignore
