@@ -1,4 +1,4 @@
-#!/usr/local/env bash
+#!/bin/bash
 
 ln -s ~/dotfiles/ctags ~/.ctags
 ln -s ~/dotfiles/vimrc ~/.vimrc
