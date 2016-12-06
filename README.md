@@ -2,6 +2,12 @@ My dotfiles
 
 ## Install
 
+Install vim via homebrew
+
+```
+brew install macvim
+```
+
 clone this project at your home directory and run:
 
 ```shell
