@@ -21,6 +21,7 @@ call vundle#rc()
 
 Bundle 'gmarik/Vundle.vim'
 Bundle 'wincent/Command-T'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ervandew/supertab'
