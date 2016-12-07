@@ -35,7 +35,6 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
-Bundle '907th/vim-auto-save'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'majutsushi/tagbar'
 Bundle 'arnaud-lb/vim-php-namespace'
@@ -57,9 +56,6 @@ filetype plugin indent on
 " -----------------------------------------------------------------------------
 " PLUGINS
 " -----------------------------------------------------------------------------
-
-" --- AutoSave ---
-let g:auto_save = 1
 
 " --- NERDTree ----
 let NERDTreeIgnore=['.DS_Store']
