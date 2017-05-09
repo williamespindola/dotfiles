@@ -174,14 +174,13 @@ let g:syntastic_check_on_wq = 0
 " -----------------------------------------------------------------------------
 
 set t_Co=256                " 256 colors terminal
-let g:molokai_original = 0
-colorscheme molokai
-"Tomorrow
+colorscheme onedark
 " make 'var' keyword easier to spot
 hi link javascriptType Keyword
 " default ColorColumn is too distractive
 hi clear ColorColumn
 hi link ColorColumn FoldColumn
+highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 " defaul line number is too distractive
 hi clear LineNr
 hi link LineNr Comment
@@ -220,7 +219,7 @@ if has("gui_running")
    set lines=60 columns=200
    let s:uname = system("uname")
    if s:uname == "Darwin\n"
-      set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
+      set guifont=Monaco\ for\ Powerline:h12
    endif
 endif
 
