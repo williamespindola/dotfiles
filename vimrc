@@ -20,7 +20,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 Bundle 'gmarik/Vundle.vim'
-Bundle 'wincent/Command-T'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
@@ -30,20 +29,16 @@ Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'scrooloose/syntastic'
+Bundle 'sheerun/vim-polyglot'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'majutsushi/tagbar'
-Bundle 'arnaud-lb/vim-php-namespace'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'wakatime/vim-wakatime'
 Bundle 'craigemery/vim-autotag'
-" css
-Bundle 'ap/vim-css-color'
 " js
 Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
@@ -51,7 +46,6 @@ Bundle 'elzr/vim-json'
 execute pathogen#infect()
 synta on
 filetype plugin indent on
-
 
 " -----------------------------------------------------------------------------
 " PLUGINS
@@ -102,16 +96,6 @@ endfunction
 " Trailing white space (strip spaces)
 noremap <leader>ss :call StripWhitespace()<CR>
 
-" --- vim-css-color ---
-let g:cssColorVimDoNotMessMyUpdatetime = 1
-
-" --- Command-T ---
-let g:CommandTMaxFiles=2000
-let g:CommandTMaxHeight=12
-noremap <silent> <leader>tt :CommandT<CR>
-noremap <silent> <leader>bt :CommandTBuffer<CR>
-noremap <silent> <leader>tf :CommandTFlush<CR>
-
 " --- toggle indentation mode ---
 function! ToggleExpandTab()
     if &et
@@ -142,32 +126,8 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-" airline symbols
-" let g:airline_left_sep = '<U+E0B0>'
-" let g:airline_left_alt_sep = '<U+E0B1>'
-" let g:airline_right_sep = '<U+E0B2>'
-" let g:airline_right_alt_sep = '<U+E0B3>'
-" let g:airline_symbols.branch = '<U+E0A0>'
-" let g:airline_symbols.readonly = '<U+E0A2>'
-" let g:airline_symbols.linenr = '<U+E0A1>'
-
-" --- vim-php-namespace ---
-inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
-noremap <Leader>u :call PhpInsertUse()<CR>
-
 " --- ctrlp ---
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-" --- syntastic ---
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_javascript_checkers = ['jslint']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " -----------------------------------------------------------------------------
 " UI
@@ -286,6 +246,10 @@ inoremap jk <Esc>
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
+" Super faster scrolling
+nnoremap <C-E> 10<C-e>
+nnoremap <C-Y> 10<C-y>
+
 " Bubble single lines, similar to Eclipse (requires unimpaired.vim)
 nmap <C-Up> [e
 nmap <C-Down> ]e
@@ -303,9 +267,6 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-
-" tagbar
-nmap <F8> :TagbarToggle<CR>
 
 " Make tab in v mode work like I think it should (keep highlighting):
 vmap <tab> >gv

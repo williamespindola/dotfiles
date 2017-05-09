@@ -7,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-alias vim='mvim'
+alias vim='vi'
 alias csite='~/.scripts/clearsitedir.sh'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -61,12 +61,12 @@ source $ZSH/oh-my-zsh.sh
 
 #export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
-#export PATH=/usr/local/php5/bin:$PATH
 export PATH="$PATH:/usr/local/mysql/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -83,3 +83,7 @@ fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+if [ -d "$HOME/Library/Python/2.7/bin" ]; then
+  PATH="$HOME/Library/Python/2.7/bin:$PATH"
+fi
