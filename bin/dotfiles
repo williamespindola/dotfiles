@@ -2,6 +2,7 @@
 
 ln -s ~/dotfiles/ctags ~/.ctags
 ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/ideavim ~/.ideavim
 ln -s ~/dotfiles/vim ~/.vim
 ln -s ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
