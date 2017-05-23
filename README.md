@@ -54,12 +54,8 @@ inoremap
 c>
 
 " Faster scrolling
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
-
-" Super faster scrolling
-nnoremap <C-E> 10<C-e>
-nnoremap <C-Y> 10<C-y>
+nnoremap <C-e> 5<C-e>
+nnoremap <C-y> 5<C-y>
 
 " Bubble single lines, similar to Eclipse (requires unimpaired.vim)
 nmap <C-Up> [e
