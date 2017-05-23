@@ -31,7 +31,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'sheerun/vim-polyglot'
 Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'airblade/vim-gitgutter'
@@ -39,9 +38,6 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'wakatime/vim-wakatime'
 Bundle 'craigemery/vim-autotag'
-" js
-Bundle 'pangloss/vim-javascript'
-Bundle 'elzr/vim-json'
 
 execute pathogen#infect()
 synta on
@@ -243,12 +239,8 @@ inoremap jj <ESC>
 inoremap jk <Esc>
 
 " Faster scrolling
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
-
-" Super faster scrolling
-nnoremap <C-E> 10<C-e>
-nnoremap <C-Y> 10<C-y>
+nnoremap <C-e> 5<C-e>
+nnoremap <C-y> 5<C-y>
 
 " Bubble single lines, similar to Eclipse (requires unimpaired.vim)
 nmap <C-Up> [e
