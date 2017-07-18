@@ -29,7 +29,7 @@ Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'sheerun/vim-polyglot'
+Bundle 'vim-syntastic/syntastic'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
@@ -154,8 +154,8 @@ au BufNewFile,BufRead *.phpt set filetype=php shiftwidth=4 softtabstop=4 tabstop
 au BufNewFile,BufRead *.html set filetype=html.php shiftwidth=2 softtabstop=2 tabstop=2
 au BufNewFile,BufRead *.twig set filetype=html.php shiftwidth=2 softtabstop=2 tabstop=2
 au BufNewFile,BufRead *.phtml set filetype=html.php shiftwidth=2 softtabstop=2 tabstop=2
-au BufNewFile,BufRead *.js set shiftwidth=2 softtabstop=2 tabstop=2
-au BufNewFile,BufRead *.css set shiftwidth=2 softtabstop=2 tabstop=2
+au BufNewFile,BufRead *.js set shiftwidth=4 softtabstop=4 tabstop=4
+au BufNewFile,BufRead *.css set shiftwidth=4 softtabstop=4 tabstop=4
 
 set cursorline cursorcolumn " Highlight current line and column
 set laststatus=2            " Always show status line
