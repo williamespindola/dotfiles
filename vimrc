@@ -56,7 +56,6 @@ let NERDTreeHighlightCursorline=1   "Highlight the selected entry in the tree
 let NERDTreeShowLineNumbers=0
 let NERDTreeMinimalUI=1
 noremap <leader>nt :NERDTreeToggle<CR>
-noremap <D-1> :NERDTreeToggle<CR>
 
 " --- NERDCommenter ---
 
@@ -144,20 +143,7 @@ hi clear LineNr
 hi link LineNr Comment
 set binary
 set noeol
-
 set timeoutlen=1000 ttimeoutlen=0
-
-" File types
-au BufNewFile,BufRead *.ctp set filetype=php shiftwidth=4 softtabstop=4 tabstop=4
-au BufNewFile,BufRead *.phpt set filetype=php shiftwidth=4 softtabstop=4 tabstop=4
-au BufNewFile,BufRead *.php set shiftwidth=4 softtabstop=4 tabstop=4
-au BufNewFile,BufRead *.phpt set filetype=php shiftwidth=4 softtabstop=4 tabstop=4
-au BufNewFile,BufRead *.html set filetype=html.php shiftwidth=2 softtabstop=2 tabstop=2
-au BufNewFile,BufRead *.twig set filetype=html.php shiftwidth=2 softtabstop=2 tabstop=2
-au BufNewFile,BufRead *.phtml set filetype=html.php shiftwidth=2 softtabstop=2 tabstop=2
-au BufNewFile,BufRead *.js set shiftwidth=4 softtabstop=4 tabstop=4
-au BufNewFile,BufRead *.css set shiftwidth=4 softtabstop=4 tabstop=4
-
 set cursorline cursorcolumn " Highlight current line and column
 set laststatus=2            " Always show status line
 set number                  " Enable line numbers.
