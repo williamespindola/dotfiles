@@ -163,7 +163,7 @@ if has("gui_running")
    set lines=60 columns=200
    let s:uname = system("uname")
    if s:uname == "Darwin\n"
-      set guifont=Monaco\ for\ Powerline:h12
+      set guifont=Monaco:h12
    endif
 endif
 
