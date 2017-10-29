@@ -271,3 +271,5 @@ set formatoptions-=o            " don't start new lines w/ comment leader on pre
 set nomodeline                  " don't use modeline (security)
 
 set pastetoggle=<leader>p       " paste mode: avoid auto indent, treat chars as literal.
+
+noremap <C-S-j> :%!python -m json.tool
