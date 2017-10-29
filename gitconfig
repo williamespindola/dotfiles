@@ -59,6 +59,7 @@
     co = checkout
     br = branch
     dc = diff --cached
+    gfo = git fetch origin
 [user]
     name = William Espindola
     email = oi@williamespindola.com.br

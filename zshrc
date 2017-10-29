@@ -87,3 +87,5 @@ export NVM_DIR="$HOME/.nvm"
 if [ -d "$HOME/Library/Python/2.7/bin" ]; then
   PATH="$HOME/Library/Python/2.7/bin:$PATH"
 fi
+
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
