@@ -59,7 +59,9 @@
     co = checkout
     br = branch
     dc = diff --cached
-    gfo = git fetch origin
+    fo = fetch origin
+    fh = "git fetch origin && git reset --hard FETCH_HEAD"
+    alias = config --get-regexp alias
 [user]
     name = William Espindola
     email = oi@williamespindola.com.br
