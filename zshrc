@@ -7,11 +7,8 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-alias vim='vi'
+alias vim='nvim'
 alias csite='~/.scripts/clearsitedir.sh'
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 KEYTIMEOUT=1
 
