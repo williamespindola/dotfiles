@@ -7,5 +7,6 @@ ln -s ~/dotfiles/vim ~/.vim
 ln -s ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/global_ignore ~/.global_ignore
+ln -s ~/dotfiles/wakatime.cfg ~/.wakatime.cfg
 git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
 vim +PluginInstall +qall
