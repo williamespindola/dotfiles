@@ -55,6 +55,7 @@ let NERDTreeShowBookmarks=0         "show bookmarks on startup
 let NERDTreeHighlightCursorline=1   "Highlight the selected entry in the tree
 let NERDTreeShowLineNumbers=0
 let NERDTreeMinimalUI=1
+let NERDTreeWinSize=28
 noremap <leader>nt :NERDTreeToggle<CR>
 
 " --- NERDCommenter ---
@@ -71,6 +72,9 @@ set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
 set completefunc=syntaxcomplete#Complete
 set complete=.,w,b,u,U,t,i,d
+
+" Highlight jsx in both .js and .jsx files
+let g:jsx_ext_required = 0
 
 " --- snipmate ---
 let g:snips_author = 'William Espindola <oi@williamespindola.com.br>'
@@ -125,6 +129,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 " --- ctrlp ---
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/build,*/node_modules
 
 " -----------------------------------------------------------------------------
 " UI
@@ -218,7 +223,7 @@ nnoremap <down> gj
 nnoremap k gk
 nnoremap <up> gk
 
-" next and previus tab
+" next and previus tab also use gt
 nnoremap <C-Tab> :tabn<CR>
 nnoremap <C-S-Tab> :tabp<CR>
 
@@ -230,10 +235,10 @@ inoremap jk <Esc>
 nnoremap <C-e> 5<C-e>
 nnoremap <C-y> 5<C-y>
 
-" Bubble single lines, similar to Eclipse (requires unimpaired.vim)
 nmap <C-Up> [e
 nmap <C-Down> ]e
 
+" Bubble single lines, similar to Eclipse (requires unimpaired.vim)
 " Bubble multiple lines, similar to Eclipse (requires unimpaired.vim)
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
@@ -251,6 +256,9 @@ noremap <C-l> <C-w>l
 " Make tab in v mode work like I think it should (keep highlighting):
 vmap <tab> >gv
 vmap <s-tab> <gv
+
+" Find from selection in visual mode performing //
+vnoremap // y/\V<C-R>"<CR>
 
 " -----------------------------------------------------------------------------
 "  INDENTATION AND TEXT-WRAP
