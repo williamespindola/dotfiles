@@ -41,6 +41,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'wakatime/vim-wakatime'
 Bundle 'craigemery/vim-autotag'
 Bundle 'joonty/vdebug'
+Bundle 'shawncplus/phpcomplete.vim'
 
 execute pathogen#infect()
 synta on
