@@ -37,7 +37,7 @@
 [core]
     excludesfile = /Users/williamespindola/.global_ignore
     ; setting the editor fixes git commit bug http://tooky.co.uk/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
-    editor = /usr/bin/vim
+    editor = /usr/local/bin/nvim
 [alias]
     ; show merge tree + commits info
     graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
