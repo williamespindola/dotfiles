@@ -40,6 +40,7 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'wakatime/vim-wakatime'
 Bundle 'craigemery/vim-autotag'
+Bundle 'joonty/vdebug'
 
 execute pathogen#infect()
 synta on
@@ -48,6 +49,13 @@ filetype plugin indent on
 " -----------------------------------------------------------------------------
 " PLUGINS
 " -----------------------------------------------------------------------------
+
+" --- Vdebug ----
+let g:vdebug_options = {}
+let g:vdebug_options["path_maps"] = {"/var/www/memed": "/Users/williamespindola/Desktop/memed"}
+let g:vdebug_options["port"] = 9000
+
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " --- NERDTree ----
 let NERDTreeIgnore=['.DS_Store']
@@ -159,6 +167,7 @@ set showcmd                 " show partial command on last line of screen.
 set showmatch               " show matching parenthesis
 set splitbelow splitright   " how to split new windows.
 set title                   " Show the filename in the window title bar.
+set mouse=a
 
 let g:Powerline_symbols = 'unicode'
 set encoding=utf-8

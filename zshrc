@@ -9,6 +9,7 @@ ZSH_THEME="robbyrussell"
 
 alias vim='nvim'
 alias csite='~/.scripts/clearsitedir.sh'
+alias python=python3
 
 KEYTIMEOUT=1
 
