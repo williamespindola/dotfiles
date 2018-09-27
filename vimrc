@@ -41,7 +41,6 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'wakatime/vim-wakatime'
 Bundle 'craigemery/vim-autotag'
 Bundle 'joonty/vdebug'
-Bundle 'shawncplus/phpcomplete.vim'
 
 execute pathogen#infect()
 synta on
@@ -55,7 +54,6 @@ filetype plugin indent on
 let g:vdebug_options = {}
 let g:vdebug_options["path_maps"] = {"/var/www/memed": "/Users/williamespindola/Desktop/memed"}
 let g:vdebug_options["port"] = 9000
-
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " --- NERDTree ----
@@ -65,7 +63,6 @@ let NERDTreeHighlightCursorline=1   "Highlight the selected entry in the tree
 let NERDTreeShowLineNumbers=0
 let NERDTreeMinimalUI=1
 let NERDTreeWinSize=28
-noremap <leader>nt :NERDTreeToggle<CR>
 
 " --- NERDCommenter ---
 
@@ -269,6 +266,9 @@ vmap <s-tab> <gv
 
 " Find from selection in visual mode performing //
 vnoremap // y/\V<C-R>"<CR>
+
+" Copy to clipboard
+nnoremap <C-c> "+y
 
 " -----------------------------------------------------------------------------
 "  INDENTATION AND TEXT-WRAP

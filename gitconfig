@@ -56,11 +56,12 @@
     st = status -s
     cl = clone
     ci = commit
+    ca = commit --amend
     co = checkout
     br = branch
     dc = diff --cached
     fo = fetch origin
-    fh = "git fetch origin && git reset --hard FETCH_HEAD"
+    fh = !git fetch origin && git reset --hard FETCH_HEAD
     alias = config --get-regexp alias
 [user]
     name = William Espindola
@@ -72,3 +73,7 @@
     clean = git-lfs clean %f
     smudge = git-lfs smudge %f
     required = true
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
