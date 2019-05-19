@@ -1,5 +1,5 @@
-; I removed the [user] block on purpose so other people don't copy it by mistake
-; you will need to set these values
+# I removed the [user] block on purpose so other people don't copy it by mistake
+# you will need to set these values
 [apply]
     whitespace = fix
 [color]
@@ -25,8 +25,8 @@
 [difftool]
     prompt = false
 [push]
-    ; "simple" avoid headaches, specially if you use `--force` w/o specifying branch
-    ; see: http://stackoverflow.com/questions/13148066/warning-push-default-is-unset-its-implicit-value-is-changing-in-git-2-0
+    # "simple" avoid headaches, specially if you use `--force` w/o specifying branch
+    # see: http://stackoverflow.com/questions/13148066/warning-push-default-is-unset-its-implicit-value-is-changing-in-git-2-0
     default = simple
 [url "git://github.com/"]
     insteadOf = "github:"
@@ -36,33 +36,69 @@
     pushInsteadOf = "git://github.com/"
 [core]
     excludesfile = /Users/williamespindola/.global_ignore
-    ; setting the editor fixes git commit bug http://tooky.co.uk/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
+    # setting the editor fixes git commit bug http://tooky.co.uk/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
     editor = /usr/local/bin/nvim
+    # Speed up commands involving untracked files such as `git status`.
+    # https://git-scm.com/docs/git-update-index#_untracked_cache
+    untrackedCache = true
+    # Treat spaces before tabs and all kinds of trailing whitespace as an error
+    # [defaultult] trailing-space: looks for spaces at the end of a line
+    # [default]default space-before-tab: looks for spaces before tabs at the
+    # beginning of a line
+    whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 [alias]
-    ; show merge tree + commits info
-    graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
-    lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
-    ; basic logging for quick browsing
-    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate
-    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat
-    ; log + file diff
-    fl = log -u
-    ; find paths that matches the string
-    f = "!git ls-files | grep -i"
-    ; delete all merged branches
-    ; dm = !git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
-    ; shortcuts
-    cp = cherry-pick
-    st = status -s
-    cl = clone
-    ci = commit
-    ca = commit --amend
-    co = checkout
-    br = branch
-    dc = diff --cached
-    fo = fetch origin
-    fh = !git fetch origin && git reset --hard FETCH_HEAD
+    # `git alias` List all alias
     alias = config --get-regexp alias
+    # `git g` List abbreviated SHA, description, and history graph
+    g = log --oneline --graph --abbrev-commit --decorate --all
+    # `git gn [$number|30]` List abbreviated SHA, description, and history graph of the latest `$number` commits default is 30
+    gn = !"gn() { git log --oneline -n ${1:-30} --graph --abbrev-commit --decorate --all; }; gn"
+    # `git lg` List abbreviated SHA, description with latest commit editor (not author)
+    lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
+    # `git ls [$number|20]` List abbreviated SHA, description of the latest `$number` commits default is 20
+    ls = !"ls() { git log --oneline --decorate -n ${1:-20}; }; ls"
+    # `git lsn [$number|30]` List abbreviated SHA, description of the latest `$number` of commits default is 30
+    lsn = !"lsn() { git log --oneline --decorate -n ${1:-30}; }; lsn"
+    # `git lns ` List latest 10 commits with number stats
+    lns = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat -n 10
+    # `git lst` List latest 10 commits with number stats
+    lst = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --stat -n 10
+    # `git fl [$numbr|10]` List latest `$number` of commits default is 10 + file diff
+    fl = !"fl() { git log -u -n ${1:-10}; }; fl"
+    # `git contributors` List contributors with number of commits
+    contributors = shortlog --summary --numbered
+    # `git f <param>` Find paths that matches the string
+    f = "!git ls-files | grep -i"
+    # `git dm` Delete all merged branches
+    dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+    # `git dp` Show changes and dump than. Wihout vim page interaction
+    dp = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+    # `git ds` Show changes + Patch file stats at the top
+    ds = diff -p --stat
+    # `git d` Show changes
+    d = diff
+    # DANGER!! Fetch and reset everithing to latest remote commit
+    fh = !git fetch origin -vp && git reset --hard FETCH_HEAD
+    # `git rb` Interactive rebase with the given number of latest commits
+    reb = "!r() { git rebase -i HEAD~$1; }; r"
+    # `git cp [param]` Just a alias to cherry-pick option.
+    cp = cherry-pick
+    # Alias to `git status -s`
+    st = status -s
+    # `git vp` Fech origin + remove any remote-tracking references that no longer exist on the remote.
+    vp = git fetch origin -vp
+    # `git ca` Commit all changes without add. Be careful with this litte kid ;)
+    ca = !git add -A && git commit -av
+    # Show verbose output about tags, branches or remotes
+    tags = tag -l
+    remotes = remote -v
+    dc = diff --cached
+    ci = commit
+    cm = commit --amend
+    ck = checkout
+    br = branch
+    brs = branch -a
+    fo = fetch origin
 [user]
     name = William Espindola
     email = oi@williamespindola.com.br
@@ -74,6 +110,6 @@
     smudge = git-lfs smudge %f
     required = true
 [commit]
-	gpgsign = true
+    gpgsign = true
 [gpg]
-	program = gpg
+    program = /usr/local/bin/gpg
