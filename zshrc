@@ -66,6 +66,7 @@ export PATH="$PATH:/usr/local/mysql/bin"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:${PATH}"
 export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:${MANPATH}"
 
@@ -91,3 +92,8 @@ fi
 
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 export GPG_TTY=$(tty)
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/gettext/lib"
+export LDFLAGS="-L/usr/local/opt/libffi/lib"
+export CPPFLAGS="-I/usr/local/opt/gettext/include"
+export HOMEBREW_EDITOR="vim"
