@@ -266,7 +266,10 @@ vmap <s-tab> <gv
 vnoremap // y/\V<C-R>"<CR>
 
 " Copy to clipboard
-nnoremap <C-c> "+y
+vnoremap <M-c> "+y
+
+" Format json
+command! FormatJSON %!python -m json.tool
 
 " -----------------------------------------------------------------------------
 "  INDENTATION AND TEXT-WRAP
