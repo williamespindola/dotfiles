@@ -11,15 +11,13 @@
 
 set nocompatible            " Disable vi compatibility
 
-filetype on
-
 filetype off
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin("~/.config/nvim/bundle")
 
-Bundle 'gmarik/Vundle.vim'
+Bundle 'VundleVim/Vundle.vim'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
@@ -42,7 +40,7 @@ Bundle 'wakatime/vim-wakatime'
 Bundle 'craigemery/vim-autotag'
 Bundle 'joonty/vdebug'
 
-execute pathogen#infect()
+call vundle#end()
 synta on
 filetype plugin indent on
 
