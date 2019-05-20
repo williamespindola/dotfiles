@@ -87,14 +87,14 @@
     st = status -s
     # `git vp` Fech origin + remove any remote-tracking references that no longer exist on the remote.
     vp = git fetch origin -vp
-    # `git ca` Commit all changes without add. Be careful with this litte kid ;)
-    ca = !git add -A && git commit -av
+    # `git ac` Commit all changes without add. Be careful with this litte kid ;)
+    ac = !git add -A && git commit -av
     # Show verbose output about tags, branches or remotes
     tags = tag -l
     remotes = remote -v
     dc = diff --cached
     ci = commit
-    cm = commit --amend
+    ca = commit --amend
     ck = checkout
     br = branch
     brs = branch -a
