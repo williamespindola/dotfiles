@@ -1,22 +1,20 @@
-My dotfiles
+# My dotfiles
 
 ## Install
 
-Install vim via homebrew
-
-```
-brew install macvim
-```
-
-clone this project at your home directory and run:
+Install homebrew
+Clone this project at your home directory and run:
 
 ```shell
 ~/dotfiles/bin/dotfiles
 ```
 
-## Vim
+> I you don't like to clone source in your home directory feel free to clone it and make this in your way. 
 
-![my vimrc](https://dl.dropboxusercontent.com/u/28988890/vimrc.png)
+## Vim Color Schemes
+
+### Onedark
+![onedark](vim/colors/onedark.png)
 
 ### Vim key mapping
 

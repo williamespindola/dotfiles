@@ -1,5 +1,5 @@
 #!/bin/bash
-
+brew install neovim 
 ln -s ~/dotfiles/ctags ~/.ctags
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/ideavim ~/.ideavim
