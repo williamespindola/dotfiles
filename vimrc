@@ -52,6 +52,7 @@ filetype plugin indent on
 let g:vdebug_options = {}
 let g:vdebug_options["path_maps"] = {"/var/www/memed": "/Users/williamespindola/Desktop/memed"}
 let g:vdebug_options["port"] = 9000
+let g:python2_host_prog = '/usr/local/bin/python2.7'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " --- NERDTree ----
