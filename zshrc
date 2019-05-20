@@ -11,6 +11,13 @@ alias vim='nvim'
 alias csite='~/.scripts/clearsitedir.sh'
 alias python=python3
 
+# Docker alias
+alias docker-stop-rmc='docker stop $(docker ps -a -q); docker rm $(docker ps -a -q)'
+alias docker-stop='docker stop $(docker ps -a -q)'
+alias docker-rmc='docker rm $(docker ps -a -q)'
+alias docker-rmi='docker rmi $(docker images -q)'
+alias docker-prune-images="docker images -f dangling=true -q | xargs docker rmi"
+
 KEYTIMEOUT=1
 
 # Uncomment the following line to use case-sensitive completion.
