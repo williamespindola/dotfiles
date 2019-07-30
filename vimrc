@@ -14,8 +14,8 @@ set nocompatible            " Disable vi compatibility
 filetype off
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin("~/.config/nvim/bundle")
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin("~/.vim/bundle")
 
 Bundle 'VundleVim/Vundle.vim'
 Bundle 'ctrlpvim/ctrlp.vim'
