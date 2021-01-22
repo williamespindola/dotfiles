@@ -37,7 +37,7 @@
 [core]
     excludesfile = /Users/williamespindola/.global_ignore
     # setting the editor fixes git commit bug http://tooky.co.uk/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
-    editor = /usr/local/bin/nvim
+    editor = /usr/bin/nvim
     # Speed up commands involving untracked files such as `git status`.
     # https://git-scm.com/docs/git-update-index#_untracked_cache
     untrackedCache = true
@@ -55,8 +55,8 @@
     gn = !"gn() { git log --oneline -n ${1:-30} --graph --abbrev-commit --decorate --all; }; gn"
     # `git lg` List abbreviated SHA, description with latest commit editor (not author)
     lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
-    # `git ls [$number|20]` List abbreviated SHA, description of the latest `$number` commits default is 20
-    ls = !"ls() { git log --oneline --decorate -n ${1:-20}; }; ls"
+    # `git ls` List abbreviated SHA
+    ls = log --oneline --decorate
     # `git lsn [$number|30]` List abbreviated SHA, description of the latest `$number` of commits default is 30
     lsn = !"lsn() { git log --oneline --decorate -n ${1:-30}; }; lsn"
     # `git lns ` List latest 10 commits with number stats
@@ -109,7 +109,7 @@
     clean = git-lfs clean %f
     smudge = git-lfs smudge %f
     required = true
-[commit]
-    gpgsign = true
-[gpg]
-    program = /usr/local/bin/gpg
+; [commit]
+    ; gpgsign = true
+; [gpg]
+    ; program = /usr/local/bin/gpg
